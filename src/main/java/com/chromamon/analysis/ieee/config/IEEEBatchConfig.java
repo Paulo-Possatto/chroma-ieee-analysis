@@ -2,10 +2,10 @@ package com.chromamon.analysis.ieee.config;
 
 import com.chromamon.analysis.ieee.model.AnalysisData;
 import com.chromamon.analysis.ieee.model.DiagnosticData;
-import com.chromamon.analysis.ieee.repository.DiagnosticRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.batch.core.Job;
 import org.springframework.batch.core.Step;
+import org.springframework.batch.core.configuration.annotation.EnableBatchProcessing;
 import org.springframework.batch.core.job.builder.JobBuilder;
 import org.springframework.batch.core.repository.JobRepository;
 import org.springframework.batch.core.step.builder.StepBuilder;
@@ -18,9 +18,9 @@ import org.springframework.transaction.PlatformTransactionManager;
 
 @Configuration
 @AllArgsConstructor
+@EnableBatchProcessing
 public class IEEEBatchConfig {
 
-    private DiagnosticRepository diagnosticRepository;
     private JobRepository jobRepository;
     private PlatformTransactionManager transactionManager;
 

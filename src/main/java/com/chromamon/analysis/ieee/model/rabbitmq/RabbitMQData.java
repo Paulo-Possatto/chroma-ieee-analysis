@@ -17,6 +17,4 @@ public class RabbitMQData {
     private EnvironmentParameters environmentParameters;
     @JsonProperty("history_and_observations")
     private HistoryAndObservations historyAndObservations;
-    @JsonProperty("document_id")
-    private String documentId;
 }

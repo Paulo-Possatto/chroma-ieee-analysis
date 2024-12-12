@@ -36,7 +36,6 @@ public class AnalysisData {
     private Date lastMaintenanceDate;
     private String maintenanceDone;
     private String observations;
-    private String documentId;
 
     public static AnalysisData convertToAnalysisData(RabbitMQData rabbitMq) {
         AnalysisData data = new AnalysisData();
@@ -61,7 +60,6 @@ public class AnalysisData {
         data.setLastMaintenanceDate(fromStringToDate(rabbitMq.getHistoryAndObservations().getLastMaintenanceDate(), false));
         data.setMaintenanceDone(rabbitMq.getHistoryAndObservations().getMaintenanceDone());
         data.setObservations(rabbitMq.getHistoryAndObservations().getObservations());
-        data.setDocumentId(rabbitMq.getDocumentId());
         return data;
     }
 

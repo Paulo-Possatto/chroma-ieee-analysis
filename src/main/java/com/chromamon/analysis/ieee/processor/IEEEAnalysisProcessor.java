@@ -18,16 +18,12 @@ public class IEEEAnalysisProcessor implements ItemProcessor<AnalysisData, Diagno
 
     @Override
     public DiagnosticData process(AnalysisData data) {
-        log.info("Data processing started! - Document ID: {}", data.getDocumentId());
         String result = applyIEEEMethod(data);
-        log.info("Data process finished! - Document ID: {}", data.getDocumentId());
         return new DiagnosticData(
                 data.getTransformerIdentification(),
                 "IEEE",
-                result.split("\\|")[0],
-                result.split("\\|")[1],
-                data.getAnalysisTimestamp(),
-                data.getDocumentId()
+                result,
+                data.getAnalysisTimestamp()
         );
     }
 
